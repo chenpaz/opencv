@@ -72,6 +72,7 @@ namespace
 
         void apply(InputArray image, OutputArray fgmask, double learningRate=-1);
         void apply(InputArray image, OutputArray fgmask, double learningRate, Stream& stream);
+		void applyWithMask(InputArray image, InputArray _imageMask, OutputArray fgmask, double learningRate = -1) {};
 
         void getBackgroundImage(OutputArray backgroundImage) const;
 

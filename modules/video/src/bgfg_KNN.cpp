@@ -131,6 +131,7 @@ public:
     ~BackgroundSubtractorKNNImpl() CV_OVERRIDE {}
     //! the update operator
     void apply(InputArray image, OutputArray fgmask, double learningRate) CV_OVERRIDE;
+	void applyWithMask(InputArray image, InputArray _imageMask, OutputArray fgmask, double learningRate = -1);
 
     //! computes a background image which are the mean of all background gaussians
     virtual void getBackgroundImage(OutputArray backgroundImage) const CV_OVERRIDE;
@@ -725,7 +726,9 @@ void BackgroundSubtractorKNNImpl::create_ocl_apply_kernel()
 }
 
 #endif
-
+void BackgroundSubtractorKNNImpl::applyWithMask(InputArray _image, InputArray _imageMask, OutputArray _fgmask, double learningRate)
+{
+}
 void BackgroundSubtractorKNNImpl::apply(InputArray _image, OutputArray _fgmask, double learningRate)
 {
     CV_INSTRUMENT_REGION();

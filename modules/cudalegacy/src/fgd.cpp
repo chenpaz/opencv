@@ -580,7 +580,7 @@ namespace
         ~FGDImpl();
 
         void apply(InputArray image, OutputArray fgmask, double learningRate=-1);
-
+		void applyWithMask(InputArray image, InputArray _imageMask, OutputArray fgmask, double learningRate = -1) {};
         void getBackgroundImage(OutputArray backgroundImage) const;
 
         void getForegroundRegions(OutputArrayOfArrays foreground_regions);
